@@ -11,6 +11,7 @@
         "jaeger-app/regex": "dev-master",		
         "jaeger-app/settings": "dev-master",
         "jaeger-app/shell": "dev-master",
+        "jaeger-app/view": "dev-master",
 		"jaeger-app/validate": "dev-master"		
 	},
 	"minimum-stability": "dev",
