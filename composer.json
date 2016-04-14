@@ -7,6 +7,7 @@
 		"jaeger-app/db": "dev-master",
 		"jaeger-app/email": "dev-master",
 		"jaeger-app/encrypt": "dev-master",
+		"jaeger-app/exceptions": "dev-master",
         "jaeger-app/files": "dev-master",
         "jaeger-app/regex": "dev-master",		
         "jaeger-app/settings": "dev-master",
