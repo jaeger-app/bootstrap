@@ -1,0 +1,31 @@
+{
+	"name": "jaeger-app/bootstrap",
+	"description": "A compression wrapper to create Zip files with PHP.",
+	"require": {
+		"php": ">=5.4.0",
+		"pimple/pimple": "3.*",
+		"jaeger-app/db": "dev-master",
+		"jaeger-app/email": "dev-master",
+		"jaeger-app/encrypt": "dev-master",
+        "jaeger-app/files": "dev-master",
+        "jaeger-app/regex": "dev-master",		
+        "jaeger-app/settings": "dev-master",
+        "jaeger-app/shell": "dev-master",
+		"jaeger-app/validate": "dev-master"		
+	},
+	"minimum-stability": "dev",
+	"prefer-stable": true,
+	"require-dev": {
+		"phpunit/phpunit": "4.*"
+	},
+	"authors": [{
+		"name": "Eric Lamb",
+		"email": "eric@mithra62.com"
+	}],
+	"autoload": {
+		"psr-4": {
+			"JaegerApp\\": "src/"
+		}
+	},
+	"license": "MIT"
+}
