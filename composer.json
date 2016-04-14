@@ -1,6 +1,6 @@
 {
 	"name": "jaeger-app/bootstrap",
-	"description": "A compression wrapper to create Zip files with PHP.",
+	"description": "A simple depenancy injection and startup initialization object.",
 	"require": {
 		"php": ">=5.4.0",
 		"pimple/pimple": "3.*",
