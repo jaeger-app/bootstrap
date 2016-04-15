@@ -9,6 +9,8 @@
 		"jaeger-app/encrypt": "dev-master",
 		"jaeger-app/exceptions": "dev-master",
         "jaeger-app/files": "dev-master",
+        "jaeger-app/language": "dev-master",
+        "jaeger-app/license": "dev-master",
         "jaeger-app/regex": "dev-master",		
         "jaeger-app/settings": "dev-master",
         "jaeger-app/shell": "dev-master",

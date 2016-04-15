@@ -11,18 +11,18 @@
 namespace JaegerApp;
 
 use Pimple\Container;
-use mithra62\Encrypt;
-use mithra62\Db;
-use mithra62\Language;
-use mithra62\Validate;
-use mithra62\Files;
-use mithra62\Errors;
-use mithra62\License;
-use mithra62\Email;
-use mithra62\View;
-use mithra62\Regex;
-use mithra62\Shell;
-use mithra62\Console;
+use JaegerApp\Encrypt;
+use JaegerApp\Db;
+use JaegerApp\Language;
+use JaegerApp\Validate;
+use JaegerApp\Files;
+use JaegerApp\Errors;
+use JaegerApp\License;
+use JaegerApp\Email;
+use JaegerApp\View;
+use JaegerApp\Regex;
+use JaegerApp\Shell;
+use JaegerApp\Console;
 
 /**
  * Jaeger - Bootstrap Object
@@ -129,7 +129,7 @@ class Bootstrap
     /**
      * Returns the database configuration details
      * 
-     * @return \mithra62\array
+     * @return array
      */
     public function getDbConfig()
     {
@@ -143,7 +143,7 @@ class Bootstrap
      *            The name of the new service
      * @param \Closure $function
      *            The Closure to execute when the service is called
-     * @return \mithra62\Bootstrap
+     * @return \JaegerApp\Bootstrap
      */
     public function setService($name, \Closure $function)
     {
@@ -154,7 +154,7 @@ class Bootstrap
     /**
      * Sets up and returns all the objects we'll use
      * 
-     * @return \mithra62\Language|\Pimple\Container
+     * @return \JaegerApp\Language|\Pimple\Container
      */
     public function getServices()
     {
