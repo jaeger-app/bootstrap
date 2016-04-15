@@ -2,15 +2,14 @@
 /**
  * Jaeger
  *
- * @author		Eric Lamb <eric@mithra62.com>
- * @copyright	Copyright (c) 2015-2016, mithra62, Eric Lamb
+ * @copyright	Copyright (c) 2015-2016, mithra62
  * @link		http://jaeger-app.com
  * @version		1.0
  * @filesource 	./Exceptions/BootstrapException.php
  */
 namespace JaegerApp\Exceptions;
 
-use mithra62\Exception;
+use JaegerApp\Exception;
 
 /**
  * Jaeger - Bootstrap Exception Object
