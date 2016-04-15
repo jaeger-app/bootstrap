@@ -1,13 +1,14 @@
 <?php
 /**
- * mithra62 - Bootstrap
+ * Jaeger
  *
- * @copyright	Copyright (c) 2015, mithra62, Eric Lamb.
- * @link		http://mithra62.com/
+ * @author		Eric Lamb <eric@mithra62.com>
+ * @copyright	Copyright (c) 2015-2016, mithra62, Eric Lamb
+ * @link		http://jaeger-app.com
  * @version		1.0
- * @filesource 	./mithra62/Bootstrap.php
+ * @filesource 	./Bootstrap.php
  */
-namespace mithra62;
+namespace JaegerApp;
 
 use Pimple\Container;
 use mithra62\Encrypt;
@@ -24,16 +25,14 @@ use mithra62\Shell;
 use mithra62\Console;
 
 /**
- * mithra62 - Bootstrap Object
+ * Jaeger - Bootstrap Object
  *
  * Sets up the environment and needed objects
  *
  * @package Bootstrap
- * @author Eric Lamb <eric@mithra62.com>
  */
 class Bootstrap
 {
-
     /**
      * The Pimple DI Container object
      * 
