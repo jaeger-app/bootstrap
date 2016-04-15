@@ -9,7 +9,7 @@
  */
 namespace JaegerApp\tests;
 
-use JaegerApp\Bootstrap;
+use JaegerApp\Bootstrap; 
 
 /**
  * Jaeger - Bootstrap object Unit Tests
