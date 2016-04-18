@@ -1,12 +1,14 @@
 {
 	"name": "jaeger-app/bootstrap",
-	"description": "A simple depenancy injection and startup initialization object.",
+	"description": "A pre-configured depenancy injection container and startup initialization object.",
 	"require": {
 		"php": ">=5.4.0",
 		"pimple/pimple": "3.*",
+		"jaeger-app/console": "dev-master",
 		"jaeger-app/db": "dev-master",
 		"jaeger-app/email": "dev-master",
 		"jaeger-app/encrypt": "dev-master",
+		"jaeger-app/errors": "dev-master",
 		"jaeger-app/exceptions": "dev-master",
         "jaeger-app/files": "dev-master",
         "jaeger-app/language": "dev-master",
