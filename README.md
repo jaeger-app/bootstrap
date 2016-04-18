@@ -34,7 +34,7 @@ $db = $bootstrap->getService('db');
 
 ## Configured Services
 
-Jaeger Bootstrap sets up quite a few Jaeger objects and makes them ready for use. 
+`Jaeger\Bootstrap` sets up quite a few Jaeger objects and makes them ready for use. 
 
 ```php
 use \JaegerApp\Bootstrap;
@@ -50,3 +50,29 @@ $shell = $bootstrap->getService('shell');
 $console = $bootstrap->getService('console');
 
 ```
+
+## Adding Services
+
+Ideally, like all Jaeger classes, you should extend `Jaeger\Bootstrap` and initialize the parent services before adding your own like the below:
+
+```php
+use \JaegerApp\Bootstrap;
+
+class MyBootstrap extends Bootstrap
+{
+    public function getServices()
+    {
+        $this->container = parent::getServices(); //init existing services
+		
+		//add new service
+        $this->container['my_service'] = function ($c) {
+            $settings = new NewService;
+            return $settings;
+        };
+
+		return $this->container;
+    }
+}
+```
+
+You can also add new Services at run time by using the `setService()` method. 
