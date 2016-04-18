@@ -83,6 +83,7 @@ class Bootstrap
     public function setLangPath($path)
     {
         $this->lang_paths[base64_encode($path)] = $path;
+        return $this;
     }
 
     /**
@@ -124,6 +125,7 @@ class Bootstrap
     public function setDbConfig(array $config)
     {
         $this->config['db'] = $config;
+        return $this;
     }
 
     /**
@@ -149,6 +151,18 @@ class Bootstrap
     {
         $this->container[$name] = $function;
         return $this;
+    }
+    
+    /**
+     * Returns a single service
+     * @param string $service The name of the service we want
+     * @return \Pimple\Container
+     */
+    public function getService($service)
+    {
+        if(isset($this->container[$service]) && is_callable($this->container[$service])) {
+            return $this->container[$service];
+        }
     }
 
     /**

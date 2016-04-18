@@ -27,20 +27,21 @@ class BootstrapTest extends \PHPUnit_Framework_TestCase
      */
     public function testBootstrapAttributes()
     {
-        $this->assertClassHasAttribute('container', '\JaegerApp\Bootstrap');
+        
         $this->assertClassHasAttribute('lang_file', '\JaegerApp\Bootstrap');
         $this->assertClassHasAttribute('lang_paths', '\JaegerApp\Bootstrap');
         $this->assertClassHasAttribute('config', '\JaegerApp\Bootstrap');
         
         $m62 = new Bootstrap();
-        $this->assertObjectHasAttribute('container', $m62);
         $this->assertObjectHasAttribute('lang_file', $m62);
         $this->assertObjectHasAttribute('lang_paths', $m62);
         $this->assertObjectHasAttribute('config', $m62);
     }
 
-    public function testPimpleInstance()
+    public function testContainerPropertyInstance()
     {
+        $this->assertClassHasAttribute('container', '\JaegerApp\Bootstrap');
+        
         $m62 = new Bootstrap();
         $this->assertInstanceOf('\Pimple\Container', $m62->getContainer());
     }
