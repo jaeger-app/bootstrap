@@ -161,7 +161,7 @@ class Bootstrap
      */
     public function getService($service)
     {
-        if(isset($this->container[$service]) && is_callable($this->container[$service])) {
+        if(isset($this->container[$service])) {
             return $this->container[$service];
         }
     }

@@ -1,6 +1,6 @@
 # Jaeger Bootstrap Object
 
-A per-configured dependency injection container and start-up initialization object. Jaeger Bootstrap will prepare the most common Jaeger objects and make them ready for use.
+A pre-configured dependency injection container and start-up initialization object. Jaeger Bootstrap will prepare the most common Jaeger objects and make them ready for use.
 
 ## Installation
 Add `jaeger-app/bootstrap` as a requirement to your `composer.json`:
