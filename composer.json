@@ -1,6 +1,6 @@
 {
 	"name": "jaeger-app/bootstrap",
-	"description": "A pre-configured depenancy injection container and startup initialization object.",
+	"description": "A per-configured dependency injection container and start-up initialization object. Jaeger Bootstrap will prepare the most common Jaeger objects and make them ready for use.",
 	"require": {
 		"php": ">=5.4.0",
 		"pimple/pimple": "3.*",

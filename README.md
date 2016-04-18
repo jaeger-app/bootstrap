@@ -22,6 +22,8 @@ $services = $bootstrap->getServices();
 
 //get a specific service
 $db = $services['db']; 
+
+//or ger specific service directly
 $db = $bootstrap->getService('db');
 
 ```

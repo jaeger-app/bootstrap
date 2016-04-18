@@ -11,6 +11,7 @@
 namespace JaegerApp;
 
 use Pimple\Container;
+use JaegerApp\Exceptions\BootstrapException;
 use JaegerApp\Encrypt;
 use JaegerApp\Db;
 use JaegerApp\Language;
