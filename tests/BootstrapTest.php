@@ -96,34 +96,4 @@ class BootstrapTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals('foo to the who', $services['test_service']);
         $this->assertEquals('foo to the who', $bootstrap->getService('test_service'));
     }
-    
-    public function testServices()
-    {
-        $m62 = new Bootstrap();
-        $services = $m62->getServices();
-        $m62->setDbConfig(array());
-        $this->assertArrayHasKey('db', $services);
-        $this->assertArrayHasKey('encrypt', $services);
-        $this->assertArrayHasKey('lang', $services);
-        $this->assertArrayHasKey('validate', $services);
-        $this->assertArrayHasKey('files', $services);
-        $this->assertArrayHasKey('errors', $services);
-        $this->assertArrayHasKey('license', $services);
-        $this->assertArrayHasKey('email', $services);
-        $this->assertArrayHasKey('view', $services);
-        
-        $this->assertInstanceOf('\JaegerApp\Shell', $services['shell']);
-        $this->assertInstanceOf('\JaegerApp\Regex', $services['regex']);
-        $this->assertInstanceOf('\JaegerApp\Db', $services['db']);
-        $this->assertInstanceOf('\JaegerApp\Language', $services['lang']);
-        $this->assertInstanceOf('\JaegerApp\Validate', $services['validate']);
-        $this->assertInstanceOf('\JaegerApp\Files', $services['files']);
-    }
-
-    public function testDbConfig()
-    {
-        $m62 = new Bootstrap();
-        $this->assertTrue(is_array($m62->getDbConfig()));
-        $this->assertCount(0, $m62->getDbConfig());
-    }
 }
