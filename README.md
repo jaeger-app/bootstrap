@@ -75,4 +75,16 @@ class MyBootstrap extends Bootstrap
 }
 ```
 
-You can also add new Services at run time by using the `setService()` method. 
+You can also add new Services at run time by using the `setService($name, \Closure $function)` method. 
+
+
+```php
+use \JaegerApp\Bootstrap;
+
+$bootstrap = new Bootstrap();
+$callable = function() {
+    return 'foo to the who';
+};
+
+$bootstrap->setService('test_service', $callable);
+```
