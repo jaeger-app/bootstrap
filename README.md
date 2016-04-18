@@ -21,7 +21,7 @@ $bootstrap = new Bootstrap();
 $services = $bootstrap->getServices();
 
 //get a specific service
-$db = $services['db'];
+$db = $services['db']; 
 $db = $bootstrap->getService('db');
 
 ```
