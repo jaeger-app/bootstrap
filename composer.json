@@ -3,7 +3,7 @@
 	"description": "A pre-configured dependency injection container and start-up initialization object.",
 	"require": {
 		"php": ">=5.4.0",
-		"pimple/pimple": "3.*",
+		"jaeger-app/di": "dev-master",
 		"jaeger-app/console": "dev-master",
 		"jaeger-app/db": "dev-master",
 		"jaeger-app/email": "dev-master",

@@ -10,8 +10,7 @@
  */
 namespace JaegerApp;
 
-use Pimple\Container;
-use JaegerApp\Exceptions\BootstrapException;
+use JaegerApp\Di;
 use JaegerApp\Encrypt;
 use JaegerApp\Db;
 use JaegerApp\Language;
@@ -32,15 +31,8 @@ use JaegerApp\Console;
  *
  * @package Bootstrap
  */
-class Bootstrap
+class Bootstrap extends Di
 {
-    /**
-     * The Pimple DI Container object
-     * 
-     * @var \Pimple\Container
-     */
-    protected $container = null;
-
     /**
      * The language file to load
      * 
@@ -71,8 +63,7 @@ class Bootstrap
      */
     public function __construct()
     {
-        $container = new Container();
-        $this->setContainer($container);
+        parent::__construct();
         $this->setLangPath(realpath(dirname(__FILE__) . '/language'));
     }
 
@@ -98,27 +89,6 @@ class Bootstrap
     }
 
     /**
-     * Sets the DI Container object
-     * 
-     * @param \Pimple\Container $container            
-     */
-    public function setContainer(\Pimple\Container $container)
-    {
-        $this->container = $container;
-        return $this;
-    }
-
-    /**
-     * Returns an instance of the DI Container
-     * 
-     * @return \Pimple\Container
-     */
-    public function getContainer()
-    {
-        return $this->container;
-    }
-
-    /**
      * Sets the database connection details
      * 
      * @param array $config            
@@ -140,39 +110,13 @@ class Bootstrap
     }
 
     /**
-     * Sets a new service outside of the bootstrap object
-     * 
-     * @param string $name
-     *            The name of the new service
-     * @param \Closure $function
-     *            The Closure to execute when the service is called
-     * @return \JaegerApp\Bootstrap
-     */
-    public function setService($name, \Closure $function)
-    {
-        $this->container[$name] = $function;
-        return $this;
-    }
-    
-    /**
-     * Returns a single service
-     * @param string $service The name of the service we want
-     * @return \Pimple\Container
-     */
-    public function getService($service)
-    {
-        if(isset($this->container[$service])) {
-            return $this->container[$service];
-        }
-    }
-
-    /**
      * Sets up and returns all the objects we'll use
      * 
-     * @return \JaegerApp\Language|\Pimple\Container
+     * @return \Pimple\Container
      */
     public function getServices()
     {
+        $this->container = parent::getServices();
         $this->container['db'] = function ($c) {
             $db = new Db();
             $db->setCredentials($this->getDbConfig());
