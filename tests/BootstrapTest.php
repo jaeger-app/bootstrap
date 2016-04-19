@@ -40,20 +40,6 @@ class BootstrapTest extends \PHPUnit_Framework_TestCase
         $this->assertCount(3, $bootstrap->setLangPath(__DIR__)->setLangPath('fdsafdsafdsa')->getLangPath());
     }
     
-    public function testContainerPropertyInstance()
-    {
-        $this->assertClassHasAttribute('container', '\JaegerApp\Bootstrap');
-        
-        $m62 = new Bootstrap();
-        $this->assertInstanceOf('\Pimple\Container', $m62->getContainer());
-    }
-    
-    public function testSetContainerReturnInstance()
-    {
-        $bootstrap = new Bootstrap();
-        $this->assertInstanceOf('\JaegerApp\Bootstrap', $bootstrap->setContainer(new \Pimple\Container));
-    }
-    
     public function testDefaultDbConfigProperty()
     {
         $bootstrap = new Bootstrap();
@@ -72,28 +58,5 @@ class BootstrapTest extends \PHPUnit_Framework_TestCase
         $bootstrap = new Bootstrap();
         $config = array('db' => 'test', 'host' => 'myhost.com');
         $this->assertEquals($config, $bootstrap->setDbConfig($config)->getDbConfig());
-    }
-    
-    public function testSetServiceReturnInstance()
-    {
-        $bootstrap = new Bootstrap();
-        $callable = function() {
-            return 'foo to the who';
-        };
-        $this->assertInstanceOf('\JaegerApp\Bootstrap', $bootstrap->setService('test_service', $callable));
-    }
-    
-    public function testSetServiceCallable()
-    {
-        $bootstrap = new Bootstrap();
-        $callable = function() {
-            return 'foo to the who';
-        };
-        
-        $bootstrap->setService('test_service', $callable);
-        $services = $bootstrap->getServices();
-        $this->assertArrayHasKey('test_service', $services);
-        $this->assertEquals('foo to the who', $services['test_service']);
-        $this->assertEquals('foo to the who', $bootstrap->getService('test_service'));
     }
 }
