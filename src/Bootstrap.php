@@ -22,7 +22,7 @@ use JaegerApp\Email;
 use JaegerApp\View;
 use JaegerApp\Regex;
 use JaegerApp\Shell;
-use JaegerApp\Console;
+use JaegerApp\Console; 
 
 /**
  * Jaeger - Bootstrap Object
