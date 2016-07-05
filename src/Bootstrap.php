@@ -120,10 +120,9 @@ class Bootstrap extends Di
         $this->container['db'] = function ($c) {
             $db = new Db();
             $db->setCredentials($this->getDbConfig());
-            $type = 'pdo';
-            if( function_exists('mysqli_select_db'))
-            {
-                $type = 'mysqli';
+            $type = 'mysqli';
+            if(class_exists('Pdo')) {
+                $type = 'pdo';
             }
             
             $db->setAccessType($type);
